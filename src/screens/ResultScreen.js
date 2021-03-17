@@ -1,11 +1,11 @@
 import React from 'react';
 import {Text, View, StatusBar, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import Questions from '../../questions.json';
 import styles from './styles';
 
 function ResultScreen({route, navigation}) {
   const {paramKey} = route.params;
-
   const renderQuizResultText = () => {
     return (
       <View style={styles.topHeaderView}>
@@ -62,7 +62,7 @@ function ResultScreen({route, navigation}) {
     return (
       <View>
         <Text style={styles.yourScoreText}>Y O U R S C O R E</Text>
-        <Text style={styles.totalAnsweredQuestions}> {paramKey} <Text style={styles.totalQuestions}> / 5</Text></Text>
+        <Text style={styles.totalAnsweredQuestions}> {paramKey} <Text style={styles.totalQuestions}>/ {Questions.length}</Text></Text>
         {renderCoins()}
       </View>
     );

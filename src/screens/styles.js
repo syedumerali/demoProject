@@ -131,7 +131,6 @@ export default StyleSheet.create({
     paddingHorizontal: 10,
   },
 
-
   quizHeading: {
     color: '#3f445d',
     fontSize: 18,
@@ -369,11 +368,33 @@ export default StyleSheet.create({
     backgroundColor: '#1d2544',
   },
 
+  //Login Screen
+
+  loginButtonText: {
+    fontSize: 16,
+    color: '#01c293',
+    paddingTop: 20,
+    alignSelf: 'center',
+    letterSpacing: 4,
+  },
+
+  noAccountView: {
+    flexDirection: 'row', justifyContent: 'center', paddingTop: 20
+  },
+
+  noAccountText: {
+    color:'white', letterSpacing: 2
+  },
+
+  createHereText: {
+    color: '#01c293',
+    letterSpacing: 2
+  },
+
   //Welcome Screen
   textInputBox: {
     borderBottomWidth: 1,
     borderColor: 'white',
-    paddingHorizontal: 100,
   },
 
   buttonText: {
@@ -494,5 +515,3 @@ export default StyleSheet.create({
     width: 40,
   },
 });
-
-

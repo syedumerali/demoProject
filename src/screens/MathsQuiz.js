@@ -1,11 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {
-  Text,
-  TouchableOpacity,
-  View,
-  Image,
-  StatusBar,
-} from 'react-native';
+import {Text, TouchableOpacity, View, Image, StatusBar} from 'react-native';
 import Questions from '../../questions.json';
 import styles from './styles';
 
@@ -69,6 +63,7 @@ function MathsQuiz({navigation}) {
                   ? styles.correctAnswerColor
                   : styles.incorrectAnswerColor
               }></View>
+
           </View>
         )}
       </View>
@@ -248,7 +243,6 @@ function MathsQuiz({navigation}) {
             {renderIncorrectAnswer()}
           </View>
         )}
-
       </View>
     );
   };
