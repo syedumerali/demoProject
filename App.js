@@ -10,6 +10,7 @@ import MyLogin from './src/navigation/MyLogin';
 import {AuthContext} from './src/navigation/AuthProvider';
 import auth from '@react-native-firebase/auth';
 import { useState, useEffect, useContext } from 'react';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 function App() {
   const {user, setUser} = useContext(AuthContext);
@@ -20,8 +21,12 @@ function App() {
     if(initializing) setInitializing(false);
   }
   useEffect(()=> {
+    GoogleSignin.configure({
+      webClientId: '456505895258-fq05ojnbdu0jr1ds0vl3a520v002nqgc.apps.googleusercontent.com',
+    });
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber;
+    
   }, [])
 
   if(initializing) return null;
