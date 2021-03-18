@@ -30,13 +30,18 @@ function MathsQuiz({navigation}) {
   const [answer4, setAnswer4] = useState(false);
   const [answer5, setAnswer5] = useState(false);
 
-  useEffect(()=>{
-    const allQuestions = firebaseobj.database().ref("Questions");
+  const fetchData = async () => {
+    const allQuestions = await firebaseobj.database().ref("Questions");
     allQuestions.on("value", datasnap => {
       const theQuestions = datasnap.val();
       setFetechedQuestions(theQuestions);
-      console.log(fetchedQuestions, 'finalQuestions');
+      
+
     })
+  }
+
+  useEffect(()=>{
+    fetchData()
   }, [])
 
   const renderProgress = () => {
@@ -293,6 +298,7 @@ function MathsQuiz({navigation}) {
 
   return (
     <View style={styles.mainMathsQuiz}>
+    {console.log(fetchedQuestions[index], 'finalQuestions')}
       <StatusBar backgroundColor="#12172e" />
       {renderQuizHeading()}
       {renderQuestionNo()}
