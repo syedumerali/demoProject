@@ -12,11 +12,12 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {AuthContext} from '../navigation/AuthProvider';
 import styles from './styles';
 
+
 function LoginScreen({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const {login, googleLogin} = useContext(AuthContext);
+  const {login, googleLogin, fbLogin} = useContext(AuthContext);
 
   const renderLogo = () => {
     return (
@@ -27,14 +28,6 @@ function LoginScreen({navigation}) {
       />
     );
   };
-
-  // const login = () => {
-  //     if(email != '' & password != ''){
-  //         navigation.navigate('Welcome')
-  //     }else{
-  //         alert('Enter email and password')
-  //     }
-  // }
 
   const renderLoginTextBoxes = () => {
     return (
@@ -80,7 +73,7 @@ function LoginScreen({navigation}) {
 
         <TouchableOpacity
           style={styles.loginWithFacebookButton}
-          onPress={() => googleLogin()}>
+          onPress={() => fbLogin()}>
           <Text style={styles.loginWithFacebookButtonText}>
             Login with Facebook
           </Text>
