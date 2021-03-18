@@ -1,5 +1,4 @@
-import React from 'react';
-import {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import {
   View,
   Text,
@@ -18,6 +17,15 @@ function LoginScreen({navigation}) {
   const [password, setPassword] = useState('');
 
   const {login, googleLogin, fbLogin} = useContext(AuthContext);
+
+  // useEffect(()=>{
+
+  //   const newData = firebaseobj.database().ref('newData');
+  //   newData.set({
+  //     newDataid: 1,
+  //     newDataname: 'Umer'
+  //   });
+  // })
 
   const renderLogo = () => {
     return (
