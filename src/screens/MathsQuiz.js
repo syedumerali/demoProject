@@ -41,14 +41,8 @@ function MathsQuiz({navigation}) {
     allQuestions.on("value", datasnap => {
       const theQuestions = datasnap.val();
       setFetechedQuestions(theQuestions);
-
     })
   }, [])
-
-  useEffect(()=> {
-    setFetechedQuestions(fetchedQuestions);
-
-  }, [fetchedQuestions])
 
   const renderProgress = () => {
     return (
@@ -303,7 +297,6 @@ function MathsQuiz({navigation}) {
   return (
     <View style={styles.mainMathsQuiz}>
       {
-        console.log([index], 'FETCHED KEY'),
         fetchedQuestions[index] ? <View>
         <StatusBar backgroundColor="#12172e" />
       {renderQuizHeading()}
