@@ -7,10 +7,10 @@ import {Text, TouchableOpacity, View, Image, StatusBar} from 'react-native';
 
 import styles from './styles';
 
-import Loader from '../components/AnimatedLoader/index';
+import Loader from '../../components/AnimatedLoader/index';
 
 import * as firebaseobj from 'firebase';
-import {db} from '../../config';
+import {db} from '../../../config';
 
 if (!firebaseobj.apps.length) {
   firebaseobj.initializeApp(db);
@@ -204,11 +204,11 @@ function MathsQuiz({navigation}) {
             {incorrectChecked === true ? (
               <Image
                 style={{height: 20, width: 20}}
-                source={require('../assets/images/quizIcons/wrong.png')}
+                source={require('../../assets/images/quizIcons/wrong.png')}
               />
             ) : (
               <Image
-                source={require('../assets/images/quizIcons/circle.png')}
+                source={require('../../assets/images/quizIcons/circle.png')}
               />
             )}
           </View>
@@ -240,10 +240,10 @@ function MathsQuiz({navigation}) {
           {checked === true ? (
             <Image
               style={{height: 20, width: 20}}
-              source={require('../assets/images/quizIcons/correct2.png')}
+              source={require('../../assets/images/quizIcons/correct2.png')}
             />
           ) : (
-            <Image source={require('../assets/images/quizIcons/circle.png')} />
+            <Image source={require('../../assets/images/quizIcons/circle.png')} />
           )}
         </View>
       </TouchableOpacity>
@@ -282,7 +282,7 @@ function MathsQuiz({navigation}) {
           style={styles.quitButton}>
           <Image
             style={styles.quitButtonIcon}
-            source={require('../assets/images/quizIcons/quit.png')}
+            source={require('../../assets/images/quizIcons/quit.png')}
           />
           <Text style={styles.quitButtonText}>Quit Quiz</Text>
         </TouchableOpacity>
