@@ -11,7 +11,8 @@ function HomeScreen({navigation, route}) {
       <View style={styles.mainCardView}>
         <Image
           style={styles.cardImage}
-          source={require('../../images/CardImage2.jpg')}
+          source={require('../../assets/images/mainImages/CardImage2.jpg')}
+
         />
 
         <View style={styles.cardMainTextView}>

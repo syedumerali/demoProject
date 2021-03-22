@@ -14,12 +14,13 @@ function ResultScreen({route, navigation}) {
           {paramKey > 3 ? (
             <Image
               style={styles.topHeaderImageSize}
-              source={require('../../images/victoryCup.png')}
+              source={require('../../assets/images/mainImages/victoryCup.png')}
+
             />
           ) : (
             <Image
               style={styles.topHeaderImageSize}
-              source={require('../../images/lost.png')}
+              source={require('../../assets/images/mainImages/lost.png')}
             />
           )}
         </View>
