@@ -1,7 +1,6 @@
 import React from 'react';
 import {Text, View, StatusBar, Image, Share} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import Questions from '../../../questions.json';
 import styles from './styles';
 
 function ResultScreen({route, navigation}) {
