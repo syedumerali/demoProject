@@ -36,6 +36,8 @@ function MathsQuiz({navigation}) {
   const [answer4, setAnswer4] = useState(false);
   const [answer5, setAnswer5] = useState(false);
 
+  const theLength = fetchedQuestions.length;
+
   useEffect(()=>{
     const allQuestions = firebaseobj.database().ref("Questions");
     allQuestions.on("value", datasnap => {
@@ -150,6 +152,7 @@ function MathsQuiz({navigation}) {
     } else {
       navigation.navigate('Results', {
         paramKey: score,
+        paramKey2: theLength
       });
       setCurrentQuestion(1);
       setIndex(0);

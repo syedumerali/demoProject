@@ -5,7 +5,7 @@ import Questions from '../../../questions.json';
 import styles from './styles';
 
 function ResultScreen({route, navigation}) {
-  const {paramKey} = route.params;
+  const {paramKey, paramKey2} = route.params;
   const renderQuizResultText = () => {
     return (
       <View style={styles.topHeaderView}>
@@ -80,7 +80,7 @@ function ResultScreen({route, navigation}) {
         <Text style={styles.totalAnsweredQuestions}>
           {' '}
           {paramKey}{' '}
-          <Text style={styles.totalQuestions}>/ {Questions.length}</Text>
+          <Text style={styles.totalQuestions}>/ {paramKey2 ? paramKey2 : 5}</Text>
         </Text>
         {renderCoins()}
       </View>
